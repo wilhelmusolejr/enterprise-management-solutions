@@ -231,7 +231,7 @@ export default function Home() {
             <p className="text-sm text-yellow-500 capitalize ">
               Unlock your global workforce
             </p>
-            <h1 className="mb-2 text-4xl font-bold leading-normal text-black xl:text-6xl ">
+            <h1 className="mb-2 text-4xl font-bold leading-normal text-black xl:text-6xl xl:leading-normal ">
               Enterprise Management <br />
               Solutions
             </h1>
@@ -274,14 +274,15 @@ export default function Home() {
           />
 
           {/* service card */}
-          <div className="flex items-center justify-center w-full ">
-            <div className="flex flex-wrap max-w-5xl gap-5 mb-24 ">
+          {/* Service Card Container */}
+          <div className="flex items-center justify-center w-full">
+            <div className="grid grid-cols-1 gap-5 mb-24 sm:grid-cols-2 xl:grid-cols-4">
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="p-5 bg-white rounded-md max-w-80 text-light-black "
+                  className="p-5 bg-white rounded-md shadow-md max-w-80 text-light-black"
                 >
-                  {/* image */}
+                  {/* Image */}
                   <div className="h-[250px] w-full overflow-hidden rounded-md relative">
                     <Image
                       src={service.image}
@@ -291,7 +292,7 @@ export default function Home() {
                     />
                   </div>
 
-                  {/* text */}
+                  {/* Text */}
                   <div className="pt-5">
                     <h3 className="text-xl font-medium text-black">
                       {service.title}
@@ -426,16 +427,13 @@ export default function Home() {
                   <p className="font-light md:w-3/4">{team.description}</p>
                 </div>
 
-                <div className="flex justify-center w-full ">
-                  <div className="flex flex-wrap justify-center w-11/12 gap-10 md:justify-start">
-                    {/* members */}
+                <div className="flex justify-center w-full">
+                  <div className="grid w-11/12 grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    {/* Members */}
                     {team.members.map((member, index) => (
-                      <div
-                        key={index}
-                        className="w-64 rounded-md text-light-black"
-                      >
-                        {/* image */}
-                        <div className="relative w-64 h-64 overflow-hidden rounded-md">
+                      <div key={index} className="rounded-md text-light-black">
+                        {/* Image */}
+                        <div className="relative w-full h-64 overflow-hidden rounded-md">
                           <Image
                             src={member.image}
                             alt="Description of the image"
@@ -444,17 +442,17 @@ export default function Home() {
                           />
                         </div>
 
-                        {/* text */}
+                        {/* Text */}
                         <div className="pt-5">
                           <div className="">
                             <h3 className="text-xl font-medium text-black">
                               {member.name}
                             </h3>
-                            <p className="font-light ">{member.position}</p>
+                            <p className="font-light">{member.position}</p>
                           </div>
                           <div className="">
-                            <p className="font-light ">{member.email}</p>
-                            <p className="font-light ">{member.contact}</p>
+                            <p className="font-light">{member.email}</p>
+                            <p className="font-light">{member.contact}</p>
                           </div>
                         </div>
                       </div>

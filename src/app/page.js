@@ -9,6 +9,8 @@ import technology_img from "@/assets/images/technology.png";
 import about_img from "@/assets/images/about.png";
 import map_img from "@/assets/images/map.png";
 
+import header_img from "@/assets/images/header.png";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -19,9 +21,12 @@ import {
   faPhone,
   faClock,
   faLocationPin,
+  faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
 import ServiceCard from "@/component/ServiceCard";
+import SectionText from "@/component/SectionText";
+import ContactInfo from "@/component/ContactInfo";
 
 // button component
 // navigator component
@@ -108,6 +113,27 @@ export default function Home() {
           email: "coo@enterprisemgmtinc.com",
           contact: "(667) 400-5656",
         },
+        {
+          image: about_img,
+          name: "Vernon Holmes",
+          position: "Chief Executive Officer",
+          email: "ceo@enterprisemgmtinc.com",
+          contact: "(667) 400-0602",
+        },
+        {
+          image: about_img,
+          name: "Demetrius Brockington",
+          position: "Chief Operations Officer",
+          email: "coo@enterprisemgmtinc.com",
+          contact: "(667) 400-5656",
+        },
+        {
+          image: about_img,
+          name: "Demetrius Brockington",
+          position: "Chief Operations Officer",
+          email: "coo@enterprisemgmtinc.com",
+          contact: "(667) 400-5656",
+        },
       ],
     },
     {
@@ -129,8 +155,29 @@ export default function Home() {
           email: "coo@enterprisemgmtinc.com",
           contact: "(667) 400-5656",
         },
+        {
+          image: about_img,
+          name: "Demetrius Brockington",
+          position: "Chief Operations Officer",
+          email: "coo@enterprisemgmtinc.com",
+          contact: "(667) 400-5656",
+        },
+        {
+          image: about_img,
+          name: "Demetrius Brockington",
+          position: "Chief Operations Officer",
+          email: "coo@enterprisemgmtinc.com",
+          contact: "(667) 400-5656",
+        },
       ],
     },
+  ];
+
+  let aboutus = [
+    "Expert guidance tailored to your unique needs.",
+    "Focused on achieving your goals from start to finish.",
+    "Committed to client satisfaction every step of the way.",
+    "Collaborative approach, listening to what matters most to you.",
   ];
 
   return (
@@ -138,14 +185,14 @@ export default function Home() {
       {/* NAVIGATOR */}
       <div className="fixed z-10 w-full py-8 bg-white shadow-md">
         {/* navigator - container */}
-        <div className="container flex items-center justify-between px-5 mx-auto lg:px-0">
+        <div className="container flex items-center justify-between px-5 mx-auto ">
           {/* logo */}
           <div className="logo">
             <Image src="/emslogo.svg" alt="Logo" width={175} height={175} />
           </div>
 
           {/* nav-links */}
-          <ul className="flex items-center hidden gap-8 capitalize text-light-black">
+          <ul className="items-center hidden gap-8 capitalize lg:flex text-light-black">
             <li>
               <a href="#">About</a>
             </li>
@@ -167,28 +214,28 @@ export default function Home() {
           </ul>
 
           {/* nav-button */}
-          <div className="hidden px-5 py-3 text-white uppercase bg-yellow-500 rounded-lg shadow-lg btn w-max">
+          <div className="hidden px-5 py-3 text-white uppercase bg-yellow-500 rounded-lg shadow-lg lg:flex btn w-max">
             <p>Get in touch</p>
           </div>
 
-          <FontAwesomeIcon icon={faBars} />
+          <FontAwesomeIcon icon={faBars} className="lg:hidden " />
         </div>
       </div>
 
       {/* HEADER */}
       <header className="flex items-center min-h-screen ">
         {/* header - container */}
-        <div className="container flex flex-col px-5 mx-auto text-light-black lg:px-0">
+        <div className="container flex flex-col-reverse items-center justify-center gap-10 px-5 pt-48 pb-20 mx-auto lg:flex-row text-light-black ">
           {/* left */}
-          <div className="">
+          <div className="w-full">
             <p className="text-sm text-yellow-500 capitalize ">
               Unlock your global workforce
             </p>
-            <h1 className="mb-2 text-4xl font-bold text-black">
+            <h1 className="mb-2 text-4xl font-bold leading-normal text-black xl:text-6xl ">
               Enterprise Management <br />
               Solutions
             </h1>
-            <p>
+            <p className="md:w-3/4">
               At Enterprise Management Solutions, we empower businesses to
               streamline operations, optimize performance, and achieve
               sustainable growth.{" "}
@@ -201,61 +248,68 @@ export default function Home() {
           </div>
 
           {/* right */}
-          <div className="bg-red-500 rounded-md "></div>
+          <div className="flex items-center justify-center rounded-md">
+            <div className="relative rounded-md w-60 h-60 lg:w-96 lg:h-96 gray">
+              <Image
+                src={header_img}
+                alt="Description of the image"
+                className="object-cover w-full h-full "
+                fill
+              />
+            </div>
+          </div>
         </div>
       </header>
 
       {/* SERVICES */}
       <div className=" bg-light-white py-28">
-        <div className="container px-5 mx-auto lg:px-0">
+        <div className="container px-5 mx-auto ">
           {/* Section Text */}
-          <div className="flex flex-col items-center mb-24 text-center capitalize text-light-black">
-            <p className="font-medium text-md">The services</p>
-            <h2 className="mb-8 text-4xl font-semibold text-black">
-              What <span className="text-yellow-500">we offer</span> to you
-            </h2>
-            <p className="max-w-3xl normal-case">
-              We offer a comprehensive range of services designed to help your
+          <SectionText
+            miniHeadline={"The services"}
+            headline={"What we offer to you"}
+            description={`We offer a comprehensive range of services designed to help your
               business thrive. From tailored strategic planning and market
-              analysis to innovative solutions.
-            </p>
-          </div>
+              analysis to innovative solutions.`}
+          />
 
           {/* service card */}
-          <div className="flex flex-wrap justify-center gap-5 mb-24 ">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="w-full max-w-xs p-5 bg-white rounded-md min-w-72 text-light-black "
-              >
-                {/* image */}
-                <div className="h-[200px] w-full overflow-hidden rounded-md relative">
-                  <Image
-                    src={service.image}
-                    alt="Description of the image"
-                    className="object-cover w-full h-full"
-                    fill
-                  />
-                </div>
+          <div className="flex items-center justify-center w-full ">
+            <div className="flex flex-wrap max-w-5xl gap-5 mb-24 ">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className="p-5 bg-white rounded-md max-w-80 text-light-black "
+                >
+                  {/* image */}
+                  <div className="h-[250px] w-full overflow-hidden rounded-md relative">
+                    <Image
+                      src={service.image}
+                      alt="Description of the image"
+                      className="object-cover w-full h-full"
+                      fill
+                    />
+                  </div>
 
-                {/* text */}
-                <div className="pt-5">
-                  <h3 className="text-xl font-medium text-black">
-                    {service.title}
-                  </h3>
-                  <p className="font-light ">{service.description}</p>
+                  {/* text */}
+                  <div className="pt-5">
+                    <h3 className="text-xl font-medium text-black">
+                      {service.title}
+                    </h3>
+                    <p className="font-light ">{service.description}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* banner */}
-          <div className="flex flex-col items-center justify-center px-5 py-10 text-center rounded-xl service-banner">
-            <h2 className="mb-5 text-4xl font-semibold text-yellow-500">
+          <div className="flex flex-col items-center justify-center px-5 py-14 md:text-center rounded-xl service-banner">
+            <h2 className="mb-5 text-2xl font-semibold text-yellow-500 md:text-4xl">
               Let's Drive Success Together
             </h2>
 
-            <p className="text-light-white">
+            <p className="max-w-2xl md:w-3/4 font-extralight text-light-white">
               No matter your business size, Enterprise Management Solutions is
               here to help you overcome challenges and achieve your goals.
               Contact us today to see how we can drive your success.
@@ -269,28 +323,40 @@ export default function Home() {
       </div>
 
       {/* ABOUT */}
-      <div className="min-h-screen py-10 bg-gray-900 about ">
-        <div className="container flex flex-col gap-10 px-5 mx-auto lg:px-0">
+      <div className="flex items-center justify-center min-h-screen py-20 bg-gray-900 about">
+        <div className="container flex flex-col gap-10 px-5 mx-auto text-white lg:flex-row ">
           {/* left */}
-          <div className="">
+          <div className="w-full ">
             {/* Section Text */}
             <div className="flex flex-col capitalize ">
-              <p className="text-white text-md">Our Story</p>
-              <h2 className="mb-8 text-4xl font-semibold text-yellow-500">
+              <p className=" text-md">Our Story</p>
+              <h2 className="max-w-lg mb-8 text-4xl font-semibold text-yellow-500 ">
                 Enterprises Management Solutions
               </h2>
-              <p className="max-w-3xl font-thin normal-case text-light-white">
+              <p className="max-w-lg normal-case font-extralight text-light-white">
                 At Enterprise Management Solutions, we provide tailored
                 corporate management services to optimize operations and drive
                 long-term success. Our experienced team partners with clients to
                 overcome challenges, seize opportunities, and achieve strategic
                 goals.
               </p>
+
+              <div className="mt-5">
+                {aboutus.map((about, index) => (
+                  <div className="flex items-center gap-5 mb-3" key={index}>
+                    <FontAwesomeIcon
+                      icon={faCheck}
+                      className="text-green-600"
+                    />
+                    <p>{about}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           {/* right */}
-          <div className="">
-            <div className="h-[250px] relative w-full overflow-hidden rounded-md ">
+          <div className="flex items-center justify-center w-full lg:w-80 xl:w-full">
+            <div className="relative w-full overflow-hidden rounded-md lg:w-80 h-52 md:h-80 ">
               <Image
                 src={about_img}
                 alt=""
@@ -304,19 +370,15 @@ export default function Home() {
 
       {/* WHY CHOOSE US */}
       <div className=" py-28">
-        <div className="container px-5 mx-auto lg:px-0">
+        <div className="container px-5 mx-auto ">
           {/* Section Text */}
-          <div className="flex flex-col items-center mb-24 text-center capitalize text-light-black">
-            <p className="font-medium text-md">Why choose us</p>
-            <h2 className="mb-8 text-4xl font-semibold text-black">
-              Why <span className="text-yellow-500">we stand out</span>
-            </h2>
-            <p className="max-w-3xl normal-case">
-              We are dedicated to delivering exceptional value through
+          <SectionText
+            miniHeadline={"Why choose us"}
+            headline={"Why we stand out"}
+            description={`We are dedicated to delivering exceptional value through
               customized solutions, expert guidance, and a deep understanding of
-              your business needs.
-            </p>
-          </div>
+              your business needs.`}
+          />
 
           {/* card */}
           <div className="flex flex-wrap justify-center gap-5 mb-24 ">
@@ -342,62 +404,62 @@ export default function Home() {
 
       {/* TEAM */}
       <div className=" bg-light-white py-28">
-        <div className="container px-5 mx-auto lg:px-0">
+        <div className="container px-5 mx-auto ">
           {/* Section Text */}
-          <div className="flex flex-col items-center mb-24 text-center capitalize text-light-black">
-            <p className="font-medium text-md">Our Experts</p>
-            <h2 className="mb-8 text-4xl font-semibold text-black">
-              Meet <span className="text-yellow-500">the team</span>
-            </h2>
-            <p className="max-w-3xl normal-case">
-              Our team is made up of skilled professionals with deep industry
-              knowledge and a passion for delivering results.
-            </p>
-          </div>
+          <SectionText
+            miniHeadline={"Our Experts"}
+            headline={"Meet the team"}
+            description={`Our team is made up of skilled professionals with deep industry
+              knowledge and a passion for delivering results.`}
+          />
 
-          {/* service card */}
-          <div className="flex flex-col gap-20 mb-24 ">
+          {/* card */}
+          <div className="flex flex-col gap-20 ">
             {teams.map((team, index) => (
               <div className="" key={index}>
+                {/* team introduction */}
                 {/* text */}
-                <div className="mb-5 text-light-black">
+                <div className="mb-10 text-light-black">
                   <h3 className="mb-2 text-2xl font-medium text-black">
                     {team.title}
                   </h3>
-                  <p className="font-light ">{team.description}</p>
+                  <p className="font-light md:w-3/4">{team.description}</p>
                 </div>
 
-                <div className="flex flex-wrap gap-10">
-                  {team.members.map((member, index) => (
-                    <div
-                      key={index}
-                      className="w-full max-w-xs rounded-md min-w-72 text-light-black "
-                    >
-                      {/* image */}
-                      <div className="h-[200px] w-full overflow-hidden rounded-md relative">
-                        <Image
-                          src={member.image}
-                          alt="Description of the image"
-                          className="object-cover w-full h-full"
-                          fill
-                        />
-                      </div>
+                <div className="flex justify-center w-full ">
+                  <div className="flex flex-wrap justify-center w-11/12 gap-10 md:justify-start">
+                    {/* members */}
+                    {team.members.map((member, index) => (
+                      <div
+                        key={index}
+                        className="w-64 rounded-md text-light-black"
+                      >
+                        {/* image */}
+                        <div className="relative w-64 h-64 overflow-hidden rounded-md">
+                          <Image
+                            src={member.image}
+                            alt="Description of the image"
+                            className="object-cover w-full h-full"
+                            fill
+                          />
+                        </div>
 
-                      {/* text */}
-                      <div className="pt-5">
-                        <div className="">
-                          <h3 className="text-xl font-medium text-black">
-                            {member.name}
-                          </h3>
-                          <p className="font-light ">{member.position}</p>
-                        </div>
-                        <div className="">
-                          <p className="font-light ">{member.email}</p>
-                          <p className="font-light ">{member.contact}</p>
+                        {/* text */}
+                        <div className="pt-5">
+                          <div className="">
+                            <h3 className="text-xl font-medium text-black">
+                              {member.name}
+                            </h3>
+                            <p className="font-light ">{member.position}</p>
+                          </div>
+                          <div className="">
+                            <p className="font-light ">{member.email}</p>
+                            <p className="font-light ">{member.contact}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
@@ -407,91 +469,53 @@ export default function Home() {
 
       {/* CONTACT */}
       <div className="min-h-screen bg-gray-900 py-28 contact ">
-        <div className="container px-5 mx-auto lg:px-0">
+        <div className="container px-5 mx-auto ">
           {/* Section Text */}
-          <div className="flex flex-col items-center mb-20 text-center text-white capitalize">
+          <div className="flex flex-col mb-20 text-white capitalize md:text-center md:items-center">
             <p className="font-medium text-md">The services</p>
             <h2 className="mb-8 text-4xl font-semibold ">
               We're <span className="text-yellow-500">Here to Help</span>
             </h2>
-            <p className="max-w-3xl font-thin normal-case text-light-white">
+            <p className="max-w-3xl normal-case font-extralight text-light-white">
               Reach out to us with any questions or concerns, and our team will
               be happy to assist you. Whether you need more information about
               our services or support with a specific need.
             </p>
           </div>
 
-          <div className="flex flex-col gap-14">
+          <div className="flex flex-col items-center lg:flex-row gap-14">
             {/* LEFT */}
             {/* contact info */}
-            <div className="text-white">
+            <div className="flex items-center justify-center w-full text-white">
               {/* left */}
-              <div className="flex flex-col gap-5 capitalize">
+              <div className="flex flex-col gap-5 capitalize md:gap-10">
                 {/* Contact Number - CHILD*/}
-                <div className="flex items-center gap-5">
-                  <div className="flex items-center justify-center">
-                    <FontAwesomeIcon
-                      icon={faPhone}
-                      className="text-yellow-500"
-                    />
-                  </div>
-                  <div className="">
-                    <h3 className="text-2xl font-medium">Contact number</h3>
-                    <p className="text-sm text-light-white">
-                      (667) 309-5345 |{" "}
-                      <span className="text-yellow-500">Available 24/7</span>
-                    </p>
-                  </div>
-                </div>
+                <ContactInfo
+                  emoji={faPhone}
+                  title={"Contact number"}
+                  description={`(667) 309-5345 | Available 24/7`}
+                />
 
                 {/* Mail - CHILD*/}
-                <div className="flex items-center gap-5 ">
-                  <div className="flex items-center justify-center">
-                    <FontAwesomeIcon
-                      icon={faEnvelope}
-                      className="text-yellow-500"
-                    />
-                  </div>
-                  <div className="">
-                    <h3 className="text-2xl font-medium">Our mail</h3>
-                    <p className="text-sm text-light-white">
-                      (667) 309-5345 |{" "}
-                      <span className="text-yellow-500">Available 24/7</span>
-                    </p>
-                  </div>
-                </div>
+                <ContactInfo
+                  emoji={faEnvelope}
+                  title={"Our mail"}
+                  description={`support@enterprisemgmtinc.com`}
+                />
 
                 {/* Office Hours   - CHILD*/}
-                <div className="flex items-center gap-5 ">
-                  <div className="flex items-center justify-center">
-                    <FontAwesomeIcon
-                      icon={faClock}
-                      className="text-yellow-500"
-                    />
-                  </div>
-                  <div className="">
-                    <h3 className="text-2xl font-medium">office hours</h3>
-                    <p className="text-sm text-light-white">
-                      8:00 AM - 5:00 PM | Monday - Friday
-                    </p>
-                  </div>
-                </div>
+                <ContactInfo
+                  emoji={faClock}
+                  title={"office hours"}
+                  description={`8:00 AM - 5:00 PM | Monday - Friday`}
+                />
 
                 {/* Location   - CHILD*/}
-                <div className="flex items-center gap-5 ">
-                  <div className="flex items-center justify-center">
-                    <FontAwesomeIcon
-                      icon={faLocationPin}
-                      className="text-yellow-500"
-                    />
-                  </div>
-                  <div className="">
-                    <h3 className="text-2xl font-medium">Location</h3>
-                    <p className="text-sm text-light-white">
-                      Room 3B, 3310 Eastern Avenue, Baltimore, MD, 21224
-                    </p>
-                  </div>
-                </div>
+                <ContactInfo
+                  emoji={faLocationPin}
+                  title={"Location"}
+                  description={`Room 3B, 3310 Eastern Avenue, Baltimore, MD, 21224`}
+                />
               </div>
               {/* right */}
               <div className=""></div>
@@ -499,8 +523,11 @@ export default function Home() {
 
             {/* RIGHT */}
             {/* form */}
-            <div className="">
-              <form action="" className="p-5 bg-white rounded-md">
+            <div className="flex items-center justify-center w-full ">
+              <form
+                action=""
+                className="w-full max-w-md p-5 bg-white rounded-md"
+              >
                 {/* full name */}
                 <div className="flex flex-col gap-2 mb-5">
                   <label htmlFor="name" className="capitalize">
@@ -564,10 +591,10 @@ export default function Home() {
 
       {/* MAP */}
       <div className="py-28">
-        <div className="container w-11/12 px-5 mx-auto border rounded-md lg:px-0 bg-light-white">
-          <div className="flex flex-col gap-10 py-8">
+        <div className="container flex items-center justify-center w-11/12 max-w-5xl px-10 mx-auto border rounded-md bg-light-white">
+          <div className="flex flex-col items-center max-w-5xl gap-10 py-8 lg:flex-row-reverse">
             {/* Section Text */}
-            <div className="flex flex-col capitalize text-light-black">
+            <div className="flex flex-col w-full capitalize text-light-black">
               <h2 className="mb-8 text-4xl font-semibold text-yellow-500">
                 We're here for you
               </h2>
@@ -577,43 +604,47 @@ export default function Home() {
                 learn more about our services.
               </p>
 
-              <div className="flex gap-5">
+              <div className="flex items-center gap-5">
                 <FontAwesomeIcon icon={faLocationPin} className="" />
                 <p>Room 3B, 3310 Eastern Avenue, Baltimore, MD, 21224</p>
               </div>
             </div>
-
-            <div className="">
-              <Image
-                src={map_img}
-                alt="Description of the image"
-                className="object-cover w-full h-full"
-                width={300}
-                height={300}
-              />
+            {/* image */}
+            <div className="flex items-center justify-center ">
+              <div className="relative h-60 w-60 md:h-96 md:w-96 ">
+                <Image
+                  src={map_img}
+                  alt="Description of the image"
+                  className="object-cover w-full h-full rounded-lg"
+                  fill
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* FOOTER */}
-      <footer>
-        <div className="container px-5 py-10 mx-auto text-white bg-black lg:px-0">
-          {/* logo */}
-          <div className="logo">
-            <Image src="/emslogo.svg" alt="Logo" width={175} height={175} />
+      <footer className="bg-black">
+        <div className="container flex items-center justify-between px-5 mx-auto text-white py-14 ">
+          <div className="flex flex-wrap items-center justify-center gap-10">
+            {/* logo */}
+            <div className="logo">
+              <Image src="/emslogo.svg" alt="Logo" width={175} height={175} />
+            </div>
+
+            {/* links */}
+            <ul className="flex flex-col gap-5 font-light md:flex-row md:gap-10">
+              <li>
+                <a href="#">Contact Support</a>
+              </li>
+              <li>
+                <a href="#">File a complaint</a>
+              </li>
+            </ul>
           </div>
 
-          <ul className="pt-10 font-thin ">
-            <li>
-              <a href="#">Contact Support</a>
-            </li>
-            <li>
-              <a href="#">File a complaint</a>
-            </li>
-          </ul>
-
-          <p className="mt-10 font-thin">
+          <p className="font-light text-center ">
             © 2024 Enterprise Management Solutions. All Rights Reserved
           </p>
         </div>

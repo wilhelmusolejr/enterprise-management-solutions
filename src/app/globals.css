@@ -13,6 +13,17 @@ svg {
   width: 24px;
 }
 
+.contact svg {
+  width: 32px;
+}
+
+.container {
+  /* padding-left: 10vh !important; */
+  /* padding-right: 10vh !important; */
+
+  /* max-width: 1536px !important; */
+}
+
 .service-banner {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url("../assets/images/servicebanner.png") center center / cover no-repeat;

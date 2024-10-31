@@ -224,15 +224,15 @@ export default function Home() {
       </div>
 
       {/* HEADER */}
-      <header className="flex items-center min-h-screen ">
+      <header className="flex items-center header">
         {/* header - container */}
-        <div className="container flex flex-col-reverse items-center justify-center gap-10 px-5 pt-48 pb-20 mx-auto lg:flex-row text-light-black ">
+        <div className="container flex flex-col-reverse items-center justify-center gap-10 px-5 pt-48 pb-20 mx-auto lg:flex-row text-light-white ">
           {/* left */}
           <div className="w-full">
             <p className="text-sm text-yellow-500 capitalize ">
               Unlock your global workforce
             </p>
-            <h1 className="mb-2 text-4xl font-bold leading-normal text-black xl:text-5xl xl:leading-normal ">
+            <h1 className="mb-2 text-4xl font-bold leading-normal text-white xl:text-5xl xl:leading-normal ">
               Enterprise Management <br />
               Solutions
             </h1>
@@ -249,19 +249,19 @@ export default function Home() {
           </div>
 
           {/* right */}
-          <div className="relative flex items-center justify-center w-full rounded-md">
-            <div className="relative rounded-md w-60 h-60 lg:w-96 lg:h-96 gray">
+          <div className="relative flex items-center justify-center w-full h-full rounded-md">
+            <div className="relative rounded-md image-parent gray">
               <Image
                 src={header_img}
                 alt="Description of the image"
-                className="z-10 object-cover w-full h-full"
+                className="z-10 object-cover w-full h-full rounded-md"
                 fill
               />
             </div>
 
-            <div className="absolute w-full bg-gray-200 rounded-md xl:w-10/12 h-4/5">
+            <div className="absolute w-full bg-gray-200 rounded-md xl:w-10/12 h-3/5">
               {/* float */}
-              <div className="absolute z-10 flex-col hidden gap-3 bottom-5 left-5 md:flex">
+              <div className="absolute z-10 flex-col hidden gap-3 text-black bottom-5 left-5 md:flex">
                 <div className="flex items-center gap-2 p-2 capitalize bg-white rounded-md shadow w-fit">
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -397,7 +397,7 @@ export default function Home() {
       </div>
 
       {/* WHY CHOOSE US */}
-      <div className=" py-28 whychooseus">
+      <div className=" pt-28 whychooseus">
         <div className="container px-5 mx-auto ">
           {/* Section Text */}
           <SectionText

@@ -183,7 +183,7 @@ export default function Home() {
   return (
     <>
       {/* NAVIGATOR */}
-      <div className="fixed z-10 w-full py-8 bg-white shadow-md">
+      <div className="fixed z-20 w-full py-8 bg-white shadow-md">
         {/* navigator - container */}
         <div className="container flex items-center justify-between px-5 mx-auto ">
           {/* logo */}
@@ -235,7 +235,7 @@ export default function Home() {
               Enterprise Management <br />
               Solutions
             </h1>
-            <p className="md:w-3/4">
+            <p className="md:w-3/4 lg:text-lg">
               At Enterprise Management Solutions, we empower businesses to
               streamline operations, optimize performance, and achieve
               sustainable growth.{" "}
@@ -297,7 +297,9 @@ export default function Home() {
                     <h3 className="text-xl font-medium text-black">
                       {service.title}
                     </h3>
-                    <p className="font-light ">{service.description}</p>
+                    <p className="font-light lg:text-lg ">
+                      {service.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -310,7 +312,7 @@ export default function Home() {
               Let's Drive Success Together
             </h2>
 
-            <p className="max-w-2xl md:w-3/4 font-extralight text-light-white">
+            <p className="max-w-2xl lg:text-lg md:w-3/4 font-extralight text-light-white">
               No matter your business size, Enterprise Management Solutions is
               here to help you overcome challenges and achieve your goals.
               Contact us today to see how we can drive your success.
@@ -331,10 +333,10 @@ export default function Home() {
             {/* Section Text */}
             <div className="flex flex-col capitalize ">
               <p className=" text-md">Our Story</p>
-              <h2 className="max-w-lg mb-8 text-4xl font-semibold text-yellow-500 ">
+              <h2 className="max-w-lg mb-8 text-4xl font-semibold leading-normal text-yellow-500 ">
                 Enterprises Management Solutions
               </h2>
-              <p className="max-w-lg normal-case font-extralight text-light-white">
+              <p className="leading-relaxed normal-case lg:leading-relaxed lg:text-lg font-extralight text-light-white">
                 At Enterprise Management Solutions, we provide tailored
                 corporate management services to optimize operations and drive
                 long-term success. Our experienced team partners with clients to
@@ -349,28 +351,32 @@ export default function Home() {
                       icon={faCheck}
                       className="text-green-600"
                     />
-                    <p>{about}</p>
+                    <p className="text-lg">{about}</p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
           {/* right */}
-          <div className="flex items-center justify-center w-full lg:w-80 xl:w-full">
-            <div className="relative w-full overflow-hidden rounded-md lg:w-80 h-52 md:h-80 ">
+          <div className="relative flex items-center justify-center w-full rounded-md lg:w-80 xl:w-full">
+            {/* image */}
+            <div className="relative w-full overflow-hidden rounded-md lg:w-80 xl:w-9/12 h-52 md:h-80">
+              {/* Image */}
               <Image
                 src={about_img}
                 alt=""
-                className="object-cover w-full h-full"
+                className="z-10 object-cover w-full h-full rounded-md "
                 fill
               />
             </div>
+
+            <div className="absolute w-full mt-5 bg-yellow-500 rounded-md ms-5 lg:w-80 xl:w-9/12 h-52 md:h-80"></div>
           </div>
         </div>
       </div>
 
       {/* WHY CHOOSE US */}
-      <div className=" py-28">
+      <div className=" py-28 whychooseus">
         <div className="container px-5 mx-auto ">
           {/* Section Text */}
           <SectionText
@@ -396,7 +402,9 @@ export default function Home() {
                 <h3 className="mt-5 mb-3 text-xl font-medium text-black capitalize">
                   {reason.title}
                 </h3>
-                <p className="font-light ">{reason.description}</p>
+                <p className="font-light lg:leading-normal lg:text-lg ">
+                  {reason.description}
+                </p>
               </div>
             ))}
           </div>
@@ -424,7 +432,9 @@ export default function Home() {
                   <h3 className="mb-2 text-2xl font-medium text-black">
                     {team.title}
                   </h3>
-                  <p className="font-light md:w-3/4">{team.description}</p>
+                  <p className="font-light lg:text-lg md:w-3/4">
+                    {team.description}
+                  </p>
                 </div>
 
                 <div className="flex justify-center w-full">
@@ -474,7 +484,7 @@ export default function Home() {
             <h2 className="mb-8 text-4xl font-semibold ">
               We're <span className="text-yellow-500">Here to Help</span>
             </h2>
-            <p className="max-w-3xl normal-case font-extralight text-light-white">
+            <p className="max-w-3xl normal-case lg:text-lg font-extralight text-light-white">
               Reach out to us with any questions or concerns, and our team will
               be happy to assist you. Whether you need more information about
               our services or support with a specific need.
@@ -596,13 +606,13 @@ export default function Home() {
               <h2 className="mb-8 text-4xl font-semibold text-yellow-500">
                 We're here for you
               </h2>
-              <p className="max-w-3xl mb-8 normal-case ">
+              <p className="max-w-3xl mb-8 normal-case lg:text-lg ">
                 Find us at our convenient location, where we’re ready to assist
                 you with all your needs. Visit us for personalized support or to
                 learn more about our services.
               </p>
 
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-5 lg:text-lg">
                 <FontAwesomeIcon icon={faLocationPin} className="" />
                 <p>Room 3B, 3310 Eastern Avenue, Baltimore, MD, 21224</p>
               </div>
@@ -624,7 +634,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="bg-black">
-        <div className="container flex items-center justify-between px-5 mx-auto text-white py-14 ">
+        <div className="container flex flex-wrap items-center justify-center gap-10 px-5 mx-auto text-white lg:justify-between py-14 ">
           <div className="flex flex-wrap items-center justify-center gap-10">
             {/* logo */}
             <div className="logo">

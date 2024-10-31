@@ -491,7 +491,7 @@ export default function Home() {
           {/* banner */}
           <div className="flex flex-col items-center justify-center px-5 py-14 md:text-center rounded-xl service-banner">
             <h2 className="mb-5 text-2xl font-semibold text-yellow-500 md:text-4xl">
-              Let's Drive Success Together
+              {`Let's Drive Success Together`}
             </h2>
 
             <p className="max-w-2xl lg:text-lg md:w-3/4 font-extralight text-light-white">
@@ -673,7 +673,9 @@ export default function Home() {
           <div className="flex flex-col mb-20 text-white capitalize md:text-center md:items-center">
             <p className="font-medium text-md">The services</p>
             <h2 className="mb-8 text-4xl font-semibold ">
-              We're <span className="text-yellow-500">Here to Help</span>
+              {`We're ${(
+                <span className="text-yellow-500">Here to Help</span>
+              )}`}
             </h2>
             <p className="max-w-3xl normal-case lg:text-lg font-extralight text-light-white">
               Reach out to us with any questions or concerns, and our team will
@@ -795,7 +797,7 @@ export default function Home() {
             {/* Section Text */}
             <div className="flex flex-col w-full capitalize text-light-black">
               <h2 className="mb-8 text-4xl font-semibold text-yellow-500">
-                We're here for you
+                {`We're here for you`}
               </h2>
               <p className="max-w-3xl mb-8 normal-case lg:text-lg ">
                 Find us at our convenient location, where we’re ready to assist

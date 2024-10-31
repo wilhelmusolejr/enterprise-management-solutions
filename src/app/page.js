@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import planning_img from "@/assets/images/planning.jpg";
 import organizational_img from "@/assets/images/organizational.jpg";
@@ -10,6 +11,11 @@ import about_img from "@/assets/images/about.png";
 import map_img from "@/assets/images/map.png";
 
 import header_img from "@/assets/images/header.png";
+
+import team1_img from "@/assets/images/team/image-1.png";
+import team2_img from "@/assets/images/team/image-2.png";
+import team3_img from "@/assets/images/team/image-3.png";
+import team4_img from "@/assets/images/team/image-4.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -25,10 +31,9 @@ import {
   faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-import ServiceCard from "@/component/ServiceCard";
 import SectionText from "@/component/SectionText";
 import ContactInfo from "@/component/ContactInfo";
-import Link from "next/link";
+import Navigator from "@/component/Navigator";
 
 // button component
 // navigator component
@@ -102,35 +107,28 @@ export default function Home() {
         "Provides strategic direction and vision, guiding our organization towards achieving its goals. With a focus on innovation and growth, our leaders inspire and empower teams to deliver exceptional results and drive long-term success.",
       members: [
         {
-          image: about_img,
+          image: team1_img,
           name: "Vernon Holmes",
           position: "Chief Executive Officer",
           email: "ceo@enterprisemgmtinc.com",
           contact: "(667) 400-0602",
         },
         {
-          image: about_img,
+          image: team2_img,
           name: "Demetrius Brockington",
           position: "Chief Operations Officer",
           email: "coo@enterprisemgmtinc.com",
           contact: "(667) 400-5656",
         },
         {
-          image: about_img,
+          image: team3_img,
           name: "Vernon Holmes",
           position: "Chief Executive Officer",
           email: "ceo@enterprisemgmtinc.com",
           contact: "(667) 400-0602",
         },
         {
-          image: about_img,
-          name: "Demetrius Brockington",
-          position: "Chief Operations Officer",
-          email: "coo@enterprisemgmtinc.com",
-          contact: "(667) 400-5656",
-        },
-        {
-          image: about_img,
+          image: team4_img,
           name: "Demetrius Brockington",
           position: "Chief Operations Officer",
           email: "coo@enterprisemgmtinc.com",
@@ -193,11 +191,12 @@ export default function Home() {
             {/* <Image src="/emslogo.svg" alt="Logo" width={175} height={175} /> */}
             <Link href={"/"}>
               <Image
+                style={{ width: "100px", height: "auto" }} // Set height to auto
                 src="/emslogo_black.svg"
                 alt="Logo"
                 width={175}
                 height={175}
-              />{" "}
+              />
             </Link>
           </div>
 
@@ -265,6 +264,7 @@ export default function Home() {
                 alt="Description of the image"
                 className="z-10 object-cover w-full h-full rounded-md"
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
               />
             </div>
 
@@ -292,7 +292,7 @@ export default function Home() {
       </header>
 
       {/* SERVICES */}
-      <div className=" bg-light-white py-28">
+      <div id="services" className=" bg-light-white py-28">
         <div className="container px-5 mx-auto ">
           {/* Section Text */}
           <SectionText
@@ -304,7 +304,6 @@ export default function Home() {
               analysis to innovative solutions.`}
           />
 
-          {/* service card */}
           {/* Service Card Container */}
           <div className="flex items-center justify-center w-full">
             <div className="grid grid-cols-1 gap-5 mb-24 sm:grid-cols-2 xl:grid-cols-4">
@@ -320,6 +319,7 @@ export default function Home() {
                       alt="Description of the image"
                       className="object-cover w-full h-full"
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                     />
                   </div>
 
@@ -357,7 +357,10 @@ export default function Home() {
       </div>
 
       {/* ABOUT */}
-      <div className="flex items-center justify-center min-h-screen py-20 bg-gray-900 about">
+      <div
+        id="about"
+        className="flex items-center justify-center min-h-screen py-20 bg-gray-900 about"
+      >
         <div className="container flex flex-col gap-10 px-5 mx-auto text-white lg:flex-row ">
           {/* left */}
           <div className="w-full ">
@@ -398,6 +401,7 @@ export default function Home() {
                 alt=""
                 className="z-10 object-cover w-full h-full rounded-md "
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
               />
             </div>
 
@@ -407,7 +411,7 @@ export default function Home() {
       </div>
 
       {/* WHY CHOOSE US */}
-      <div className=" pt-28 whychooseus">
+      <div id="why-us" className=" pt-28 whychooseus">
         <div className="container px-5 mx-auto ">
           {/* Section Text */}
           <SectionText
@@ -444,7 +448,7 @@ export default function Home() {
       </div>
 
       {/* TEAM */}
-      <div className=" bg-light-white py-28">
+      <div id="our-experts" className=" bg-light-white py-28">
         <div className="container px-5 mx-auto ">
           {/* Section Text */}
           <SectionText
@@ -471,17 +475,20 @@ export default function Home() {
                 </div>
 
                 <div className="flex justify-center w-full">
+                  {/* 250px */}
+
                   <div className="grid w-11/12 grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {/* Members */}
                     {team.members.map((member, index) => (
                       <div key={index} className="rounded-md text-light-black">
                         {/* Image */}
-                        <div className="relative w-full h-64 overflow-hidden rounded-md">
+                        <div className="relative w-full overflow-hidden rounded-md h-80">
                           <Image
                             src={member.image}
                             alt="Description of the image"
                             className="object-cover w-full h-full"
                             fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                           />
                         </div>
 
@@ -658,6 +665,7 @@ export default function Home() {
                   alt="Description of the image"
                   className="object-cover w-full h-full rounded-lg"
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                 />
               </div>
             </div>

@@ -28,6 +28,7 @@ import {
 import ServiceCard from "@/component/ServiceCard";
 import SectionText from "@/component/SectionText";
 import ContactInfo from "@/component/ContactInfo";
+import Link from "next/link";
 
 // button component
 // navigator component
@@ -189,7 +190,15 @@ export default function Home() {
         <div className="container flex items-center justify-between px-5 mx-auto ">
           {/* logo */}
           <div className="logo">
-            <Image src="/emslogo.svg" alt="Logo" width={175} height={175} />
+            {/* <Image src="/emslogo.svg" alt="Logo" width={175} height={175} /> */}
+            <Link href={"/"}>
+              <Image
+                src="/emslogo_black.svg"
+                alt="Logo"
+                width={175}
+                height={175}
+              />{" "}
+            </Link>
           </div>
 
           {/* nav-links */}
@@ -289,6 +298,7 @@ export default function Home() {
           <SectionText
             miniHeadline={"The services"}
             headline={"What we offer to you"}
+            highlight="we offer"
             description={`We offer a comprehensive range of services designed to help your
               business thrive. From tailored strategic planning and market
               analysis to innovative solutions.`}
@@ -403,6 +413,7 @@ export default function Home() {
           <SectionText
             miniHeadline={"Why choose us"}
             headline={"Why we stand out"}
+            highlight="we stand out"
             description={`We are dedicated to delivering exceptional value through
               customized solutions, expert guidance, and a deep understanding of
               your business needs.`}
@@ -439,6 +450,7 @@ export default function Home() {
           <SectionText
             miniHeadline={"Our Experts"}
             headline={"Meet the team"}
+            highlight="the team"
             description={`Our team is made up of skilled professionals with deep industry
               knowledge and a passion for delivering results.`}
           />

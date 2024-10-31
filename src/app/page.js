@@ -671,7 +671,7 @@ export default function Home() {
         <div className="container px-5 mx-auto ">
           {/* Section Text */}
           <div className="flex flex-col mb-20 text-white capitalize md:text-center md:items-center">
-            <p className="font-medium text-md">The services</p>
+            <p className="font-medium text-md">Got a Question?</p>
             <h2 className="mb-8 text-4xl font-semibold ">
               {`We're `} <span className="text-yellow-500">Here to Help</span>
             </h2>

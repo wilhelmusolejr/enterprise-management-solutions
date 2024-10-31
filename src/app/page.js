@@ -16,6 +16,8 @@ import team1_img from "@/assets/images/team/image-1.png";
 import team2_img from "@/assets/images/team/image-2.png";
 import team3_img from "@/assets/images/team/image-3.png";
 import team4_img from "@/assets/images/team/image-4.png";
+import tushar_img from "@/assets/images/team/tushar.png";
+import userprofile_img from "@/assets/images/team/user-profile.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -36,9 +38,9 @@ import ContactInfo from "@/component/ContactInfo";
 import Navigator from "@/component/Navigator";
 import NavLink from "@/component/NavLink";
 
-// button component
-// navigator component
-// service card component
+export const metadata = {
+  title: "Enterprise Management Solutions",
+};
 
 export default function Home() {
   let services = [
@@ -108,7 +110,7 @@ export default function Home() {
         "Provides strategic direction and vision, guiding our organization towards achieving its goals. With a focus on innovation and growth, our leaders inspire and empower teams to deliver exceptional results and drive long-term success.",
       members: [
         {
-          image: team1_img,
+          image: userprofile_img,
           name: "Vernon Holmes",
           position: "Chief Executive Officer",
           email: "ceo@enterprisemgmtinc.com",
@@ -122,14 +124,14 @@ export default function Home() {
           contact: "(667) 400-5656",
         },
         {
-          image: team3_img,
+          image: userprofile_img,
           name: "Vernon Holmes",
           position: "Chief Executive Officer",
           email: "ceo@enterprisemgmtinc.com",
           contact: "(667) 400-0602",
         },
         {
-          image: team4_img,
+          image: userprofile_img,
           name: "Demetrius Brockington",
           position: "Chief Operations Officer",
           email: "coo@enterprisemgmtinc.com",
@@ -143,32 +145,60 @@ export default function Home() {
         "Focuses on building a supportive and efficient workplace. We manage talent acquisition, employee development, and organizational processes to ensure a productive and engaging environment for all team members.",
       members: [
         {
-          image: about_img,
+          image: userprofile_img,
           name: "Vernon Holmes",
           position: "Chief Executive Officer",
           email: "ceo@enterprisemgmtinc.com",
           contact: "(667) 400-0602",
         },
         {
-          image: about_img,
+          image: userprofile_img,
           name: "Demetrius Brockington",
           position: "Chief Operations Officer",
           email: "coo@enterprisemgmtinc.com",
           contact: "(667) 400-5656",
         },
         {
-          image: about_img,
+          image: userprofile_img,
           name: "Demetrius Brockington",
           position: "Chief Operations Officer",
           email: "coo@enterprisemgmtinc.com",
           contact: "(667) 400-5656",
         },
         {
-          image: about_img,
+          image: userprofile_img,
           name: "Demetrius Brockington",
           position: "Chief Operations Officer",
           email: "coo@enterprisemgmtinc.com",
           contact: "(667) 400-5656",
+        },
+        {
+          image: userprofile_img,
+          name: "Demetrius Brockington",
+          position: "Chief Operations Officer",
+          email: "coo@enterprisemgmtinc.com",
+          contact: "(667) 400-5656",
+        },
+      ],
+    },
+    {
+      title: "Division of Finance & Accounting",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eum iure temporibus illo, eligendi enim ea laborum atque maiores recusandae.",
+      members: [
+        {
+          image: userprofile_img,
+          name: "Jamey Galor",
+          position: "Account Receivables Department Manager",
+          email: "receivables@enterprisemgmtinc.com",
+          contact: "(667) 400-5871",
+        },
+        {
+          image: tushar_img,
+          name: "Tushar Patel",
+          position: "Account Payables Department Manager",
+          email: "accountspayablemanager@enterprisemgmtinc.com",
+          contact: "(667) 400-5938",
         },
       ],
     },
@@ -490,8 +520,6 @@ export default function Home() {
                 </div>
 
                 <div className="flex justify-center w-full">
-                  {/* 250px */}
-
                   <div className="grid w-11/12 grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {/* Members */}
                     {team.members.map((member, index) => (
@@ -515,8 +543,10 @@ export default function Home() {
                             </h3>
                             <p className="font-light">{member.position}</p>
                           </div>
-                          <div className="">
-                            <p className="font-light">{member.email}</p>
+                          <div className="mt-1">
+                            <p className="font-light break-words">
+                              {member.email}
+                            </p>
                             <p className="font-light">{member.contact}</p>
                           </div>
                         </div>

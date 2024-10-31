@@ -22,6 +22,7 @@ import {
   faClock,
   faLocationPin,
   faCheck,
+  faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
 import ServiceCard from "@/component/ServiceCard";
@@ -231,11 +232,11 @@ export default function Home() {
             <p className="text-sm text-yellow-500 capitalize ">
               Unlock your global workforce
             </p>
-            <h1 className="mb-2 text-4xl font-bold leading-normal text-black xl:text-6xl xl:leading-normal ">
+            <h1 className="mb-2 text-4xl font-bold leading-normal text-black xl:text-5xl xl:leading-normal ">
               Enterprise Management <br />
               Solutions
             </h1>
-            <p className="md:w-3/4 lg:text-lg">
+            <p className="font-light md:w-3/4 lg:text-lg">
               At Enterprise Management Solutions, we empower businesses to
               streamline operations, optimize performance, and achieve
               sustainable growth.{" "}
@@ -248,14 +249,34 @@ export default function Home() {
           </div>
 
           {/* right */}
-          <div className="flex items-center justify-center rounded-md">
+          <div className="relative flex items-center justify-center w-full rounded-md">
             <div className="relative rounded-md w-60 h-60 lg:w-96 lg:h-96 gray">
               <Image
                 src={header_img}
                 alt="Description of the image"
-                className="object-cover w-full h-full "
+                className="z-10 object-cover w-full h-full"
                 fill
               />
+            </div>
+
+            <div className="absolute w-full bg-gray-200 rounded-md xl:w-10/12 h-4/5">
+              {/* float */}
+              <div className="absolute z-10 flex-col hidden gap-3 bottom-5 left-5 md:flex">
+                <div className="flex items-center gap-2 p-2 capitalize bg-white rounded-md shadow w-fit">
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="text-green-600"
+                  />
+                  <p>Free quotation</p>
+                </div>
+                <div className="flex items-center gap-2 p-2 capitalize bg-white rounded-md shadow w-fit">
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="text-green-600"
+                  />
+                  <p>Great Service</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -11,7 +11,9 @@ export default function SectionText({
       <h2 className="mb-5 text-4xl font-semibold text-black capitalize">
         {headline}
       </h2>
-      <p className="max-w-3xl normal-case lg:text-lg md:w-3/4">{description}</p>
+      <p className="max-w-3xl font-light normal-case lg:text-lg md:w-3/4">
+        {description}
+      </p>
     </div>
   );
 }

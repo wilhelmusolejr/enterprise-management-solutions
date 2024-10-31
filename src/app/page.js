@@ -34,6 +34,7 @@ import {
 import SectionText from "@/component/SectionText";
 import ContactInfo from "@/component/ContactInfo";
 import Navigator from "@/component/Navigator";
+import NavLink from "@/component/NavLink";
 
 // button component
 // navigator component
@@ -180,6 +181,8 @@ export default function Home() {
     "Collaborative approach, listening to what matters most to you.",
   ];
 
+  let activeSection = " ";
+
   return (
     <>
       {/* NAVIGATOR */}
@@ -191,7 +194,6 @@ export default function Home() {
             {/* <Image src="/emslogo.svg" alt="Logo" width={175} height={175} /> */}
             <Link href={"/"}>
               <Image
-                style={{ width: "100px", height: "auto" }} // Set height to auto
                 src="/emslogo_black.svg"
                 alt="Logo"
                 width={175}
@@ -202,24 +204,37 @@ export default function Home() {
 
           {/* nav-links */}
           <ul className="items-center hidden gap-8 capitalize lg:flex text-light-black">
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Services</a>
-            </li>
-            <li>
-              <a href="#">Why us</a>
-            </li>
-            <li>
-              <a href="#">our experts</a>
-            </li>
-            <li>
-              <a href="#">careers</a>
-            </li>
-            <li>
-              <a href="#">directory</a>
-            </li>
+            <NavLink
+              id={"services"}
+              section={"services"}
+              activeSection={activeSection}
+            />
+            <NavLink
+              id={"about"}
+              section={"about"}
+              activeSection={activeSection}
+            />
+            <NavLink
+              id={"why-us"}
+              section={"Why us"}
+              activeSection={activeSection}
+            />
+            <NavLink
+              id={"our-experts"}
+              section={"our experts"}
+              activeSection={activeSection}
+            />
+
+            <NavLink
+              id={"careers"}
+              section={"careers"}
+              activeSection={activeSection}
+            />
+            <NavLink
+              id={"directory"}
+              section={"directory"}
+              activeSection={activeSection}
+            />
           </ul>
 
           {/* nav-button */}

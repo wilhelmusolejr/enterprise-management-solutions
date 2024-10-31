@@ -19,6 +19,11 @@ import team4_img from "@/assets/images/team/image-4.png";
 import tushar_img from "@/assets/images/team/tushar.png";
 import userprofile_img from "@/assets/images/team/user-profile.jpg";
 
+import ceo_img from "@/assets/images/team/ceo.png";
+import cfo_img from "@/assets/images/team/cfo.png";
+import cto_img from "@/assets/images/team/cto.jpg";
+import maricel_img from "@/assets/images/team/maricel.png";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -103,14 +108,14 @@ export default function Home() {
     },
   ];
 
-  let teams = [
+  let teamss = [
     {
       title: "Excutive Leadership",
       description:
         "Provides strategic direction and vision, guiding our organization towards achieving its goals. With a focus on innovation and growth, our leaders inspire and empower teams to deliver exceptional results and drive long-term success.",
       members: [
         {
-          image: userprofile_img,
+          image: ceo_img,
           name: "Vernon Holmes",
           position: "Chief Executive Officer",
           email: "ceo@enterprisemgmtinc.com",
@@ -124,18 +129,18 @@ export default function Home() {
           contact: "(667) 400-5656",
         },
         {
-          image: userprofile_img,
-          name: "Vernon Holmes",
-          position: "Chief Executive Officer",
-          email: "ceo@enterprisemgmtinc.com",
-          contact: "(667) 400-0602",
+          image: cfo_img,
+          name: "Desmond Powell",
+          position: "Chief Financial Officer",
+          email: "cfo@enterprisemgmtinc.com",
+          contact: "(667) 354-5268",
         },
         {
-          image: userprofile_img,
-          name: "Demetrius Brockington",
-          position: "Chief Operations Officer",
+          image: cto_img,
+          name: "Deepak Kumar",
+          position: "Chief Technology & Marketing Officer",
           email: "coo@enterprisemgmtinc.com",
-          contact: "(667) 400-5656",
+          contact: "(667) 217-4487",
         },
       ],
     },
@@ -152,8 +157,8 @@ export default function Home() {
           contact: "(667) 400-0602",
         },
         {
-          image: userprofile_img,
-          name: "Demetrius Brockington",
+          image: maricel_img,
+          name: "Maricel Samson",
           position: "Chief Operations Officer",
           email: "coo@enterprisemgmtinc.com",
           contact: "(667) 400-5656",
@@ -199,6 +204,107 @@ export default function Home() {
           position: "Account Payables Department Manager",
           email: "accountspayablemanager@enterprisemgmtinc.com",
           contact: "(667) 400-5938",
+        },
+      ],
+    },
+  ];
+
+  let teams = [
+    {
+      title: "Executive Leadership",
+      description:
+        "Provides strategic direction and vision, guiding our organization towards achieving its goals. With a focus on innovation and growth, our leaders inspire and empower teams to deliver exceptional results and drive long-term success.",
+      members: [
+        {
+          image: userprofile_img,
+          name: "Elliot Larson",
+          position: "Head of Strategic Initiatives",
+          email: "elliot.larson@wilhels.com",
+          contact: "(987) 456-3124",
+        },
+        {
+          image: userprofile_img,
+          name: "Maya Simmons",
+          position: "Director of Operations",
+          email: "maya.simmons@wilhels.com",
+          contact: "(987) 654-7231",
+        },
+        {
+          image: userprofile_img,
+          name: "Cole Atwood",
+          position: "Head of Finance",
+          email: "cole.atwood@wilhels.com",
+          contact: "(987) 234-8176",
+        },
+        {
+          image: userprofile_img,
+          name: "Lily Bennett",
+          position: "Chief Innovation Officer",
+          email: "lily.bennett@wilhels.com",
+          contact: "(987) 987-1298",
+        },
+      ],
+    },
+    {
+      title: "Division of Human Resources & Administration",
+      description:
+        "Focuses on building a supportive and efficient workplace. We manage talent acquisition, employee development, and organizational processes to ensure a productive and engaging environment for all team members.",
+      members: [
+        {
+          image: userprofile_img,
+          name: "Jackson Hayes",
+          position: "Human Resources Manager",
+          email: "jackson.hayes@wilhels.com",
+          contact: "(987) 523-1487",
+        },
+        {
+          image: userprofile_img,
+          name: "Grace Ward",
+          position: "Talent Acquisition Specialist",
+          email: "grace.ward@wilhels.com",
+          contact: "(987) 365-4821",
+        },
+        {
+          image: userprofile_img,
+          name: "Aaron Reed",
+          position: "Workplace Engagement Coordinator",
+          email: "aaron.reed@wilhels.com",
+          contact: "(987) 489-6372",
+        },
+        {
+          image: userprofile_img,
+          name: "Emma Parker",
+          position: "Benefits and Payroll Administrator",
+          email: "emma.parker@wilhels.com",
+          contact: "(987) 257-9634",
+        },
+        {
+          image: userprofile_img,
+          name: "Liam Brooks",
+          position: "Organizational Development Lead",
+          email: "liam.brooks@wilhels.com",
+          contact: "(987) 789-3645",
+        },
+      ],
+    },
+    {
+      title: "Division of Finance & Accounting",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eum iure temporibus illo, eligendi enim ea laborum atque maiores recusandae.",
+      members: [
+        {
+          image: userprofile_img,
+          name: "Nina Foster",
+          position: "Receivables Department Manager",
+          email: "nina.foster@wilhels.com",
+          contact: "(987) 432-7654",
+        },
+        {
+          image: userprofile_img,
+          name: "Evan Scott",
+          position: "Payables Department Supervisor",
+          email: "evan.scott@wilhels.com",
+          contact: "(987) 274-6938",
         },
       ],
     },

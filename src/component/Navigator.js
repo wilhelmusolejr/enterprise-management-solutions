@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -10,35 +8,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import NavLink from "./NavLink";
 
 export default function Navigator() {
-  const [activeSection, setActiveSection] = useState("");
   const sections_id = ["about", "services", "why-us", "our-experts"];
-
-  const options = {
-    root: null, // Use the viewport as the root
-    rootMargin: "0px",
-    threshold: 0.3, // 50% visibility
-  };
-
-  useEffect(() => {
-    const sections = sections_id.map((id) => {
-      return document.querySelector(`#${id}`); // Return the element
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if (activeSection != entry.target.id) {
-            setActiveSection(entry.target.id);
-          }
-        }
-      });
-    }, options);
-
-    // Observe each section
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-  }, []);
 
   return (
     <>

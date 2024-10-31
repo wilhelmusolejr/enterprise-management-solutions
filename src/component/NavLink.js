@@ -1,16 +1,12 @@
 import React from "react";
+import Link from "next/link";
 
 export default function NavLink({ id, section, activeSection }) {
   return (
     <li>
-      <a
-        href={`#${id}`}
-        className={`${
-          activeSection === id ? "font-medium border-b-2 border-yellow-500" : ""
-        } capitalize`}
-      >
+      <Link href={`#${id}`} scroll={true}>
         {section}
-      </a>
+      </Link>
     </li>
   );
 }

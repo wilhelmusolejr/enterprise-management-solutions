@@ -673,9 +673,7 @@ export default function Home() {
           <div className="flex flex-col mb-20 text-white capitalize md:text-center md:items-center">
             <p className="font-medium text-md">The services</p>
             <h2 className="mb-8 text-4xl font-semibold ">
-              {`We're ${(
-                <span className="text-yellow-500">Here to Help</span>
-              )}`}
+              {`We're `} <span className="text-yellow-500">Here to Help</span>
             </h2>
             <p className="max-w-3xl normal-case lg:text-lg font-extralight text-light-white">
               Reach out to us with any questions or concerns, and our team will

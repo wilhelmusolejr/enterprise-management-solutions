@@ -29,24 +29,24 @@ svg {
 
 .service-banner {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url("../assets/images/servicebanner.png") center center / cover no-repeat;
+    url("/images/servicebanner.png") center center / cover no-repeat;
   background-attachment: fixed;
 }
 
 .about {
   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-    url("../assets/images/about1.jpg") center center / cover no-repeat;
+    url("/images/about1.jpg") center center / cover no-repeat;
 }
 
 .contact {
   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-    url("../assets/images/about1.jpg") center center / cover no-repeat;
+    url("/images/about1.jpg") center center / cover no-repeat;
 }
 
 header {
   min-height: 90vh;
   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-    url("../assets/images/about1.jpg") center center / cover no-repeat;
+    url("/images/about1.jpg") center center / cover no-repeat;
 }
 
 header .image-parent {

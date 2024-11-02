@@ -36,6 +36,7 @@ import {
   faLocationPin,
   faCheck,
   faCircleCheck,
+  faArrowRightLong,
 } from "@fortawesome/free-solid-svg-icons";
 
 import SectionText from "@/component/SectionText";
@@ -479,7 +480,18 @@ export default function Home() {
                     <h3 className="pb-2 text-lg font-medium text-black md:whitespace-nowrap ">
                       {service.title}
                     </h3>
-                    <p className="font-light text-md ">{service.description}</p>
+                    <p className="font-light pb-7 text-md">
+                      {service.description}
+                    </p>
+
+                    {/* learn more */}
+                    <div className="flex items-center justify-center gap-3 p-2 text-white bg-yellow-500 border rounded-md ">
+                      <p>Learn More</p>
+                      <FontAwesomeIcon
+                        icon={faArrowRightLong}
+                        className="w-5 "
+                      />
+                    </div>
                   </div>
                 </div>
               ))}

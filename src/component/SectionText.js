@@ -18,7 +18,7 @@ export default function SectionText({
   }
 
   return (
-    <div className="flex flex-col mb-20 capitalize md:items-center md:text-center md:border text-light-black">
+    <div className="flex flex-col items-center mb-20 text-center capitalize md:border text-light-black">
       <p className="font-medium text-md">{miniHeadline}</p>
       <h2 className="mb-5 text-4xl font-semibold text-black capitalize">
         {start}

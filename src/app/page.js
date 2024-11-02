@@ -461,7 +461,7 @@ export default function Home() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="p-5 bg-white rounded-md shadow-md max-w-80 text-light-black"
+                  className="px-5 pt-5 bg-white rounded-md shadow-md max-w-80 text-light-black"
                 >
                   {/* Image */}
                   <div className="h-[250px] w-full overflow-hidden rounded-md relative">
@@ -475,13 +475,11 @@ export default function Home() {
                   </div>
 
                   {/* Text */}
-                  <div className="pt-5">
-                    <h3 className="text-xl font-medium text-black">
+                  <div className="text-center py-7 ">
+                    <h3 className="pb-2 text-lg font-medium text-black md:whitespace-nowrap ">
                       {service.title}
                     </h3>
-                    <p className="font-light lg:text-lg ">
-                      {service.description}
-                    </p>
+                    <p className="font-light text-md ">{service.description}</p>
                   </div>
                 </div>
               ))}
@@ -579,17 +577,17 @@ export default function Home() {
             {whychooseus.map((reason, index) => (
               <div
                 key={index}
-                className="w-full max-w-xs p-5 border rounded-md bg-light-white min-w-72 text-light-black "
+                className="flex flex-col items-center w-full max-w-xs px-5 text-center border rounded-md py-7 bg-light-white min-w-72 text-light-black "
               >
                 {/* text */}
                 <FontAwesomeIcon
                   icon={reason.emoji}
                   className="text-yellow-500"
                 />
-                <h3 className="mt-5 mb-3 text-xl font-medium text-black capitalize">
+                <h3 className="mt-5 mb-3 text-lg font-medium text-black capitalize">
                   {reason.title}
                 </h3>
-                <p className="font-light lg:leading-normal lg:text-lg ">
+                <p className="font-light lg:leading-normal text-md ">
                   {reason.description}
                 </p>
               </div>

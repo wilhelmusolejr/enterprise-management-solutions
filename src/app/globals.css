@@ -45,6 +45,9 @@ svg {
 
 header {
   min-height: 90vh;
+}
+
+header.header-home {
   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
     url("/images/about1.jpg") center center / cover no-repeat;
 }
@@ -58,5 +61,27 @@ header .image-parent {
   header .image-parent {
     min-height: 50vh;
     width: 50vh;
+  }
+}
+
+header.header-service {
+  min-height: 50vh;
+}
+
+.overview {
+  top: -100px;
+}
+
+@media (min-width: 1024px) {
+  header.header-service {
+    min-height: 90vh;
+  }
+
+  .overview {
+    top: -200px;
+  }
+
+  .overview .image-parent {
+    height: 30rem !important;
   }
 }

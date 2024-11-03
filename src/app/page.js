@@ -26,10 +26,8 @@ import maricel_img from "@/assets/images/team/maricel.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBars,
   faEnvelope,
   faBoltLightning,
-  faKey,
   faRocket,
   faPhone,
   faClock,
@@ -37,12 +35,15 @@ import {
   faCheck,
   faCircleCheck,
   faArrowRightLong,
+  faAward,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 import SectionText from "@/component/SectionText";
 import ContactInfo from "@/component/ContactInfo";
 import Navigator from "@/component/Navigator";
 import NavLink from "@/component/NavLink";
+import Button from "@/component/Button";
 
 export const metadata = {
   title: "Enterprise Management Solutions",
@@ -96,7 +97,7 @@ export default function Home() {
         "With years of experience in corporate management, our team brings a wealth of knowledge and expertise to every client engagement.",
     },
     {
-      emoji: faKey,
+      emoji: faAward,
       title: "to Excellence ",
       description:
         "With years of experience in corporate management, our team brings a wealth of knowledge and expertise to every client engagement.",
@@ -323,9 +324,26 @@ export default function Home() {
   return (
     <>
       {/* NAVIGATOR */}
-      <div className="fixed z-20 w-full py-8 bg-white shadow-md">
+      <div className="fixed z-20 w-full pb-8 bg-white shadow-md short-notice">
+        {/* small banner */}
+        <div className="hidden w-full text-center text-white bg-black border-b-2 sm:block">
+          <div className="flex flex-row justify-end gap-5 px-10 py-3 mx-auto ">
+            {/* item */}
+            <div className="flex items-center justify-center gap-2">
+              <FontAwesomeIcon icon={faPhone} className="text-yellow-500" />
+              <p className="text-sm">(667) 309-5345</p>
+            </div>
+            <p className="text-light-black">|</p>
+            {/* item */}
+            <div className="flex items-center justify-center gap-2">
+              <FontAwesomeIcon icon={faEnvelope} className="text-yellow-500" />
+              <p className="text-sm">support@enterprisemgmtinc.com</p>
+            </div>
+          </div>
+        </div>
+
         {/* navigator - container */}
-        <div className="container flex items-center justify-between px-5 mx-auto ">
+        <div className="container flex items-center justify-between px-5 mx-auto mt-8 ">
           {/* logo */}
           <div className="logo">
             {/* <Image src="/emslogo.svg" alt="Logo" width={175} height={175} /> */}
@@ -375,21 +393,24 @@ export default function Home() {
           </ul>
 
           {/* nav-button */}
-          <div className="hidden px-5 py-3 text-white uppercase bg-yellow-500 rounded-lg shadow-lg lg:flex btn w-max">
+          <a
+            href="#contact"
+            className="items-center justify-center hidden gap-2 px-5 py-3 text-white uppercase transition duration-300 bg-yellow-500 border rounded-lg shadow-lg lg:flex btn w-max hover:bg-yellow-600 hover:shadow-xl"
+          >
             <p>Get in touch</p>
-          </div>
+          </a>
 
           <FontAwesomeIcon icon={faBars} className="lg:hidden " />
         </div>
       </div>
 
       {/* HEADER */}
-      <header className="flex items-center header">
+      <header className="flex items-center header header-home">
         {/* header - container */}
         <div className="container flex flex-col-reverse items-center justify-center gap-10 px-5 pt-48 pb-20 mx-auto lg:flex-row text-light-white ">
           {/* left */}
           <div className="w-full">
-            <p className="text-sm text-yellow-500 capitalize ">
+            <p className="text-yellow-500 capitalize ">
               Unlock your global workforce
             </p>
             <h1 className="mb-2 text-4xl font-bold leading-normal text-white xl:text-5xl xl:leading-normal ">
@@ -403,9 +424,9 @@ export default function Home() {
             </p>
 
             {/* nav-button */}
-            <div className="px-5 py-3 mt-8 text-white uppercase bg-yellow-500 rounded-lg shadow-lg btn w-max">
-              <p>Get started</p>
-            </div>
+            <Button className="block mt-8" target="services">
+              Get started
+            </Button>
           </div>
 
           {/* right */}
@@ -484,14 +505,17 @@ export default function Home() {
                       {service.description}
                     </p>
 
-                    {/* learn more */}
-                    <div className="flex items-center justify-center gap-3 p-2 text-white bg-yellow-500 border rounded-md ">
+                    {/* learn more btn */}
+                    <a
+                      href="/service"
+                      className="flex items-center justify-center gap-3 p-2 text-white transition duration-300 bg-yellow-500 border rounded-md hover:bg-yellow-600 hover:shadow-xl"
+                    >
                       <p>Learn More</p>
                       <FontAwesomeIcon
                         icon={faArrowRightLong}
                         className="w-5 "
                       />
-                    </div>
+                    </a>
                   </div>
                 </div>
               ))}
@@ -591,11 +615,13 @@ export default function Home() {
                 key={index}
                 className="flex flex-col items-center w-full max-w-xs px-5 text-center border rounded-md py-7 bg-light-white min-w-72 text-light-black "
               >
-                {/* text */}
-                <FontAwesomeIcon
-                  icon={reason.emoji}
-                  className="text-yellow-500"
-                />
+                <div className="flex items-center justify-center w-10 h-10 ">
+                  {/* text */}
+                  <FontAwesomeIcon
+                    icon={reason.emoji}
+                    className="text-yellow-500"
+                  />
+                </div>
                 <h3 className="mt-5 mb-3 text-lg font-medium text-black capitalize">
                   {reason.title}
                 </h3>
@@ -677,7 +703,7 @@ export default function Home() {
       </div>
 
       {/* CONTACT */}
-      <div className="min-h-screen bg-gray-900 py-28 contact ">
+      <div id="contact" className="min-h-screen bg-gray-900 py-28 contact ">
         <div className="container px-5 mx-auto ">
           {/* Section Text */}
           <div className="flex flex-col mb-20 text-white capitalize md:text-center md:items-center">
@@ -807,7 +833,7 @@ export default function Home() {
               <h2 className="mb-8 text-4xl font-semibold text-yellow-500">
                 {`We're here for you`}
               </h2>
-              <p className="max-w-3xl mb-8 normal-case lg:text-lg ">
+              <p className="max-w-3xl mb-8 font-light normal-case lg:text-lg ">
                 Find us at our convenient location, where we’re ready to assist
                 you with all your needs. Visit us for personalized support or to
                 learn more about our services.

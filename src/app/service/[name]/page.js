@@ -2,21 +2,21 @@
 
 import { useParams } from "next/navigation";
 
-import Navigator from "@/component/Navigator";
 import React from "react";
-
 import Image from "next/image";
+import Link from "next/link";
 
-import header_img from "@/assets/images/header.png";
+// Map - image
 import map_img from "@/assets/images/map.png";
 
+// Services - images
 import planning_img from "@/assets/images/planning.jpg";
 import organizational_img from "@/assets/images/organizational.jpg";
 import finance_img from "@/assets/images/finance.png";
 import operational_img from "@/assets/images/operational.png";
 import technology_img from "@/assets/images/technology.png";
 
-import NavLink from "@/component/NavLink";
+// Font emoji
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -31,8 +31,11 @@ import {
   faAward,
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
+
+// Components
 import ContactInfo from "@/component/ContactInfo";
+import Navigator from "@/component/Navigator";
+import NavLink from "@/component/NavLink";
 
 export default function Page() {
   let activeSection = " ";
@@ -78,10 +81,7 @@ export default function Page() {
     },
   ];
 
-  // Use `find` with a callback function to match the `url` property with `serviceName`
   const data = services.find((service) => service.url === serviceName);
-
-  console.log(data);
 
   return (
     <>
@@ -402,9 +402,12 @@ export default function Page() {
             </ul>
           </div>
 
-          <p className="font-light text-center ">
-            © 2024 Enterprise Management Solutions. All Rights Reserved
-          </p>
+          <a
+            href="https://wilhelmus.vercel.app?ref=ems"
+            className="font-light text-center "
+          >
+            Portfolio
+          </a>
         </div>
       </footer>
     </>

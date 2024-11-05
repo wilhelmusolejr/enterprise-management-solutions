@@ -887,9 +887,12 @@ export default function Home() {
             </ul>
           </div>
 
-          <p className="font-light text-center ">
-            © 2024 Enterprise Management Solutions. All Rights Reserved
-          </p>
+          <a
+            href="https://wilhelmus.vercel.app?ref=ems"
+            className="font-light text-center "
+          >
+            Portfolio
+          </a>
         </div>
       </footer>
     </>

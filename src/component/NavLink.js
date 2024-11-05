@@ -9,7 +9,7 @@ export default function NavLink({
 }) {
   return (
     <li>
-      <Link href={`#${id}`} scroll={true} onClick={onClick}>
+      <Link href={`#${id}`} scroll={true}>
         {section}
       </Link>
     </li>

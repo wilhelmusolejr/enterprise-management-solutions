@@ -1,10 +1,15 @@
 import React from "react";
 import Link from "next/link";
 
-export default function NavLink({ id, section, activeSection }) {
+export default function NavLink({
+  id,
+  section,
+  activeSection,
+  onClick = function () {},
+}) {
   return (
     <li>
-      <Link href={`#${id}`} scroll={true}>
+      <Link href={`#${id}`} scroll={true} onClick={onClick}>
         {section}
       </Link>
     </li>

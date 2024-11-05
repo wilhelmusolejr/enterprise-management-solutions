@@ -1,19 +1,43 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
 
+// Font Icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEnvelope,
+  faBoltLightning,
+  faRocket,
+  faTimes,
+  faPhone,
+  faClock,
+  faLocationPin,
+  faCheck,
+  faCircleCheck,
+  faArrowRightLong,
+  faAward,
+  faBars,
+} from "@fortawesome/free-solid-svg-icons";
+
+// component
 import NavLink from "./NavLink";
 
 export default function Navigator() {
   const sections_id = ["about", "services", "why-us", "our-experts"];
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   let activeSection = " ";
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
+
   return (
     <>
+      {/* NAVIGATOR */}
       <div className="fixed z-20 w-full pb-8 bg-white shadow-md short-notice">
         {/* small banner */}
         <div className="hidden w-full text-center text-white bg-black border-b-2 sm:block">
@@ -82,6 +106,48 @@ export default function Navigator() {
             />
           </ul>
 
+          {/* nav-links for mobile */}
+          {isMobileMenuOpen && (
+            <ul className="absolute flex flex-col items-center justify-center gap-8 text-lg capitalize bg-white nav-mobile text-light-black lg:hidden">
+              <NavLink
+                id={"services"}
+                section={"services"}
+                activeSection={activeSection}
+                onClick={toggleMobileMenu}
+              />
+              <NavLink
+                id={"about"}
+                section={"about"}
+                activeSection={activeSection}
+                onClick={toggleMobileMenu}
+              />
+              <NavLink
+                id={"why-us"}
+                section={"Why us"}
+                activeSection={activeSection}
+                onClick={toggleMobileMenu}
+              />
+              <NavLink
+                id={"our-experts"}
+                section={"our experts"}
+                activeSection={activeSection}
+                onClick={toggleMobileMenu}
+              />
+              <NavLink
+                id={"careers"}
+                section={"careers"}
+                activeSection={activeSection}
+                onClick={toggleMobileMenu}
+              />
+              <NavLink
+                id={"directory"}
+                section={"directory"}
+                activeSection={activeSection}
+                onClick={toggleMobileMenu}
+              />
+            </ul>
+          )}
+
           {/* nav-button */}
           <a
             href="#contact"
@@ -90,7 +156,14 @@ export default function Navigator() {
             <p>Get in touch</p>
           </a>
 
-          <FontAwesomeIcon icon={faBars} className="lg:hidden " />
+          {/* nav-button for mobile */}
+          <div className="z-20 lg:hidden">
+            <FontAwesomeIcon
+              icon={isMobileMenuOpen ? faTimes : faBars}
+              onClick={toggleMobileMenu}
+              className="cursor-pointer"
+            />
+          </div>
         </div>
       </div>
     </>

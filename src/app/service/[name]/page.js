@@ -4,7 +4,6 @@ import { useParams } from "next/navigation";
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 // Map - image
 import map_img from "@/assets/images/map.png";
@@ -20,16 +19,9 @@ import technology_img from "@/assets/images/technology.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
-  faBoltLightning,
-  faRocket,
   faPhone,
   faClock,
   faLocationPin,
-  faCheck,
-  faCircleCheck,
-  faArrowRightLong,
-  faAward,
-  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Components

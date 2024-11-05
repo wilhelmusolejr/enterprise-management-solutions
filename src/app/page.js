@@ -627,6 +627,7 @@ export default function Home() {
                   <FontAwesomeIcon
                     icon={reason.emoji}
                     className="text-yellow-500"
+                    style={{ width: "32px", height: "auto" }}
                   />
                 </div>
                 <h3 className="mt-5 mb-3 text-lg font-medium text-black capitalize">

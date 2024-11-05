@@ -10,7 +10,7 @@ export default function ServiceCard({ image, title, description, url }) {
       {/* child */}
       <div className="px-5 pt-5 bg-white rounded-md shadow-md max-w-80 text-light-black">
         {/* Image */}
-        <div className="h-[250px] w-full overflow-hidden rounded-md relative">
+        <div className="relative w-full h-64 overflow-hidden rounded-md">
           <Image
             src={image}
             alt="Description of the image"

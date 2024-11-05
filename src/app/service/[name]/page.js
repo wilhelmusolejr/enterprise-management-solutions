@@ -198,7 +198,7 @@ export default function Page() {
           </div>
 
           {/* text */}
-          <div className="flex flex-col gap-5 mx-auto font-light leading-8 mt-28 md:w-3/4 lg:w-2/4">
+          <div className="flex flex-col gap-5 mx-auto font-light leading-8 md:text-lg mt-28 md:w-3/4 lg:w-2/4">
             <p className="">
               EMS offers responsive in depth remote technical support to address
               implementation strategies, application integration issues,

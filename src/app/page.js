@@ -1,29 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// Services - images
 import planning_img from "@/assets/images/planning.jpg";
 import organizational_img from "@/assets/images/organizational.jpg";
 import finance_img from "@/assets/images/finance.png";
 import operational_img from "@/assets/images/operational.png";
 import technology_img from "@/assets/images/technology.png";
 
+// Map - images
 import about_img from "@/assets/images/about.png";
 import map_img from "@/assets/images/map.png";
 
+// Header - images
 import header_img from "@/assets/images/header.png";
 
-import team1_img from "@/assets/images/team/image-1.png";
+//  The Team - images
 import team2_img from "@/assets/images/team/image-2.png";
-import team3_img from "@/assets/images/team/image-3.png";
-import team4_img from "@/assets/images/team/image-4.png";
 import tushar_img from "@/assets/images/team/tushar.png";
 import userprofile_img from "@/assets/images/team/user-profile.jpg";
-
 import ceo_img from "@/assets/images/team/ceo.png";
 import cfo_img from "@/assets/images/team/cfo.png";
 import cto_img from "@/assets/images/team/cto.jpg";
 import maricel_img from "@/assets/images/team/maricel.png";
 
+// Font Icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -39,6 +40,7 @@ import {
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
+// Components
 import SectionText from "@/component/SectionText";
 import ContactInfo from "@/component/ContactInfo";
 import Navigator from "@/component/Navigator";
@@ -56,30 +58,35 @@ export default function Home() {
       title: "Strategic Planning",
       description:
         "We work closely with businesses to create strategic plans that align with their vision and goals.",
+      url: "strategic-planning",
     },
     {
       image: organizational_img,
       title: "Financial Management",
       description:
         "We work closely with businesses to create strategic plans that align with their vision and goals.",
+      url: "financial-management",
     },
     {
       image: finance_img,
       title: "Operational Optimization",
       description:
         "We work closely with businesses to create strategic plans that align with their vision and goals.",
+      url: "operational-optimization",
     },
     {
       image: operational_img,
       title: "Organizational Development",
       description:
         "We work closely with businesses to create strategic plans that align with their vision and goals.",
+      url: "organizational-development",
     },
     {
       image: technology_img,
       title: "Technology Integration",
       description:
         "We work closely with businesses to create strategic plans that align with their vision and goals.",
+      url: "technology-integration",
     },
   ];
 
@@ -324,85 +331,7 @@ export default function Home() {
   return (
     <>
       {/* NAVIGATOR */}
-      <div className="fixed z-20 w-full pb-8 bg-white shadow-md short-notice">
-        {/* small banner */}
-        <div className="hidden w-full text-center text-white bg-black border-b-2 sm:block">
-          <div className="flex flex-row justify-end gap-5 px-10 py-3 mx-auto ">
-            {/* item */}
-            <div className="flex items-center justify-center gap-2">
-              <FontAwesomeIcon icon={faPhone} className="text-yellow-500" />
-              <p className="text-sm">(667) 309-5345</p>
-            </div>
-            <p className="text-light-black">|</p>
-            {/* item */}
-            <div className="flex items-center justify-center gap-2">
-              <FontAwesomeIcon icon={faEnvelope} className="text-yellow-500" />
-              <p className="text-sm">support@enterprisemgmtinc.com</p>
-            </div>
-          </div>
-        </div>
-
-        {/* navigator - container */}
-        <div className="container flex items-center justify-between px-5 mx-auto mt-8 ">
-          {/* logo */}
-          <div className="logo">
-            {/* <Image src="/emslogo.svg" alt="Logo" width={175} height={175} /> */}
-            <Link href={"/"}>
-              <Image
-                src="/emslogo_black.svg"
-                alt="Logo"
-                width={175}
-                height={175}
-              />
-            </Link>
-          </div>
-
-          {/* nav-links */}
-          <ul className="items-center hidden gap-8 capitalize lg:flex text-light-black">
-            <NavLink
-              id={"services"}
-              section={"services"}
-              activeSection={activeSection}
-            />
-            <NavLink
-              id={"about"}
-              section={"about"}
-              activeSection={activeSection}
-            />
-            <NavLink
-              id={"why-us"}
-              section={"Why us"}
-              activeSection={activeSection}
-            />
-            <NavLink
-              id={"our-experts"}
-              section={"our experts"}
-              activeSection={activeSection}
-            />
-
-            <NavLink
-              id={"careers"}
-              section={"careers"}
-              activeSection={activeSection}
-            />
-            <NavLink
-              id={"directory"}
-              section={"directory"}
-              activeSection={activeSection}
-            />
-          </ul>
-
-          {/* nav-button */}
-          <a
-            href="#contact"
-            className="items-center justify-center hidden gap-2 px-5 py-3 text-white uppercase transition duration-300 bg-yellow-500 border rounded-lg shadow-lg lg:flex btn w-max hover:bg-yellow-600 hover:shadow-xl"
-          >
-            <p>Get in touch</p>
-          </a>
-
-          <FontAwesomeIcon icon={faBars} className="lg:hidden " />
-        </div>
-      </div>
+      <Navigator />
 
       {/* HEADER */}
       <header className="flex items-center header header-home">
@@ -506,8 +435,8 @@ export default function Home() {
                     </p>
 
                     {/* learn more btn */}
-                    <a
-                      href="/service"
+                    <Link
+                      href={`/service/${service.url}`}
                       className="flex items-center justify-center gap-3 p-2 text-white transition duration-300 bg-yellow-500 border rounded-md hover:bg-yellow-600 hover:shadow-xl"
                     >
                       <p>Learn More</p>
@@ -515,7 +444,7 @@ export default function Home() {
                         icon={faArrowRightLong}
                         className="w-5 "
                       />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))}

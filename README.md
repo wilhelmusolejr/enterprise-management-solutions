@@ -68,5 +68,3 @@ Hi! I’m **Wilhelmus**, a Full Stack Web Developer and Web Designer passionate 
 
 - <a href="https://wilhelmus.vercel.app/?ref=github_emc" target="_blank">Portfolio</a>
 - <a href="https://www.linkedin.com/in/wilhelmusolejr/" target="_blank">LinkedIn</a>
-
----

@@ -4,7 +4,7 @@
 
 ## 📌 Overview
 
-This project is a complete redesign and restructuring project for the original [Enterprise Management Solutions](https://enterprisemgmtinc.com/) website. The goal was to modernize the look and feel, enhance the user experience, and build a responsive and accessible interface that adapts seamlessly across devices.
+This project is a complete redesign and restructuring project for the original Enterprise Management Solutions website. The goal was to modernize the look and feel, enhance the user experience, and build a responsive and accessible interface that adapts seamlessly across devices.
 
 🔗 **Project demo:** [https://enterprise-management-solutions.vercel.app/](https://enterprise-management-solutions.vercel.app/)
 
